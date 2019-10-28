@@ -8,11 +8,12 @@ shinyUI(fluidPage(
         information from the 2010 US Census."),
       selectInput("var", label = "Choose a variable to display", 
                   choices = c("Percent White",
-                              "Percent Balck",
+                              "Percent Black",
                               "Percent Hispanic",
-                              "Percent Asian")),
+                              "Percent Asian"),
+                  selected = "Percent White"),
       sliderInput("range", label = "Range of interest", min = 0, max = 100, value = c(10, 90))
     ),
-    mainPanel(textOutput("text1"))
+    mainPanel(plotOutput("map"))
   )
 ))
